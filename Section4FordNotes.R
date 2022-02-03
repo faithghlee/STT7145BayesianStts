@@ -55,9 +55,10 @@ plot( d
       ,cex.lab = 1.3
 )
 polygon(d, col='dodgerblue1', border='dark blue')
-### OVERLAY THE PLOT WITH THE ACTUAL DISTRIBUTION WHICH WE KNOW IS BETA(15, 30)
+### OVERLAY THE PLOT WITH THE ACTUAL POSTERIOR DISTRIBUTION WHICH WE KNOW IS BETA(15, 30)
 y<- seq(0,1, by = 0.01)
-d2<-dbeta(y, shape1=15, shape2= 30)
-lines(x=y, y=d2, lwd= 2, col="red", type="b")
+d2<-dbeta(y, shape1=15, shape2= 30) 
+d3<-density(rbeta(1000, shape=15, shape2=30))
+lines(d3, lwd = 10, col="red")
 
 
